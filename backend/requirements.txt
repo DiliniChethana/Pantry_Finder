@@ -1,0 +1,8 @@
+Flask
+Flask-CORS                # Needed to allow React (port 3000) to talk to Flask (port 5000)
+Flask-SQLAlchemy          # ORM for database interaction
+# Driver: use mysqlclient for MySQL/MariaDB
+mysqlclient
+# AI/LLM Dependencies (Add these once you transfer your model from Colab)
+torch                     # PyTorch (if your model is trained with it)
+transformers              # Hugging Face library
