@@ -40,9 +40,10 @@ export default function Login() {
     },
     left: {
       flex: 1,
-      backgroundImage: "url('/logo192.png')",
+      backgroundImage: "url('/images/login-left.png')",
       backgroundSize: 'cover',
-      backgroundPosition: 'center'
+      backgroundPosition: 'center',
+      minHeight: '100vh'
     },
     right: {
       flex: 1,
@@ -53,18 +54,18 @@ export default function Login() {
     },
     card: {
       width: '100%',
-      maxWidth: '420px',
+      maxWidth: '520px',
       background: '#fff',
       borderRadius: '8px',
-      padding: '32px',
-      boxShadow: '0 8px 24px rgba(0,0,0,0.08)'
+      padding: '32px 40px',
+      boxShadow: '0 12px 30px rgba(0,0,0,0.08)'
     },
-    brandRow: { display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '18px' },
-    title: { color: '#f18b3b', fontSize: '18px', margin: '8px 0' },
-    label: { fontWeight: 600, marginBottom: '8px', display: 'block' },
-    input: { width: '100%', padding: '12px 14px', border: '1px solid #d0d0d0', borderRadius: '4px', marginBottom: '18px' },
-    button: { width: '100%', background: '#f18b3b', color: '#fff', padding: '12px', borderRadius: '8px', border: 'none', fontWeight: 700, fontSize: '16px', cursor: 'pointer' },
-    footerText: { textAlign: 'center', marginTop: '16px', color: '#333' },
+    brandRow: { display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '6px', justifyContent: 'center' },
+    title: { color: '#F7931E', fontSize: '22px', margin: '8px 0 18px' },
+    label: { fontWeight: 700, marginBottom: '8px', display: 'block', fontSize: '16px' },
+    input: { width: '100%', padding: '14px 16px', border: '1px solid #cfcfcf', borderRadius: '4px', marginBottom: '18px', fontSize: '14px' },
+    button: { width: '100%', background: '#F7931E', color: '#fff', padding: '14px', borderRadius: '10px', border: 'none', fontWeight: 800, fontSize: '18px', cursor: 'pointer' },
+    footerText: { textAlign: 'center', marginTop: '18px', color: '#333' },
     smallLink: { color: '#3b82f6', textDecoration: 'none', marginLeft: '6px' }
   };
 
@@ -73,11 +74,9 @@ export default function Login() {
       <div style={styles.left} />
       <div style={styles.right}>
         <div style={styles.card}>
-          <div style={styles.brandRow}>
-            <img src="/logo192.png" alt="logo" style={{ width: 40, height: 40 }} />
-            <h2 style={{ margin: 0 }}>Pantry Finder</h2>
+          <div style={{ textAlign: 'center', marginBottom: 6 }}>
+            <img src="/logo192.png" alt="logo" style={{ width: 56, height: 56 }} />
           </div>
-
           <h3 style={styles.title}>Login</h3>
 
           <form onSubmit={handleSubmit}>
