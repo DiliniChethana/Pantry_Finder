@@ -40,7 +40,7 @@ export default function Login() {
     },
     left: {
       flex: 1,
-      backgroundImage: "url('/images/login-left.png')",
+      backgroundImage: "url('/images/pexels-markusspiske-1871024 1.png')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh'
@@ -48,23 +48,23 @@ export default function Login() {
     right: {
       flex: 1,
       display: 'flex',
+      flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
-      padding: '48px'
+      padding: '48px 64px'
     },
     card: {
       width: '100%',
       maxWidth: '520px',
       background: '#fff',
-      borderRadius: '8px',
-      padding: '32px 40px',
-      boxShadow: '0 12px 30px rgba(0,0,0,0.08)'
+      borderRadius: '4px',
+      padding: '28px 36px',
+      boxShadow: 'none'
     },
     brandRow: { display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '6px', justifyContent: 'center' },
-    title: { color: '#F7931E', fontSize: '22px', margin: '8px 0 18px' },
+    title: { color: '#F7931E', fontSize: '22px', margin: '18px 0 18px', fontWeight: 700 },
     label: { fontWeight: 700, marginBottom: '8px', display: 'block', fontSize: '16px' },
     input: { width: '100%', padding: '14px 16px', border: '1px solid #cfcfcf', borderRadius: '4px', marginBottom: '18px', fontSize: '14px' },
-    button: { width: '100%', background: '#F7931E', color: '#fff', padding: '14px', borderRadius: '10px', border: 'none', fontWeight: 800, fontSize: '18px', cursor: 'pointer' },
+    button: { width: '80%', background: '#F7931E', color: '#fff', padding: '14px', borderRadius: '10px', border: 'none', fontWeight: 800, fontSize: '18px', cursor: 'pointer', margin: '18px auto' },
     footerText: { textAlign: 'center', marginTop: '18px', color: '#333' },
     smallLink: { color: '#3b82f6', textDecoration: 'none', marginLeft: '6px' }
   };
@@ -73,11 +73,12 @@ export default function Login() {
     <div style={styles.container}>
       <div style={styles.left} />
       <div style={styles.right}>
+        <div style={{ width: '100%', maxWidth: '520px', marginBottom: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
+          <img src="/images/Gemini_Generated_Image_hnm4xmhnm4xmhnm4 1.png" alt="logo" style={{ width: 48, height: 48 }} />
+          <div style={{ fontWeight: 700, fontSize: 20 }}>Pantry Finder</div>
+        </div>
         <div style={styles.card}>
-          <div style={{ textAlign: 'center', marginBottom: 6 }}>
-            <img src="/logo192.png" alt="logo" style={{ width: 56, height: 56 }} />
-          </div>
-          <h3 style={styles.title}>Login</h3>
+          <h3 style={{ ...styles.title, textAlign: 'left' }}>Login</h3>
 
           <form onSubmit={handleSubmit}>
             <label style={styles.label}>User Name</label>

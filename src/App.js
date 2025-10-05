@@ -37,7 +37,12 @@ export default function App() {
   return (
     <Router>
       <AuthProvider>
-        <AppRoutes />
+        {/* TEMP: render Login at root to verify UI during debugging */}
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
       </AuthProvider>
     </Router>
   );
