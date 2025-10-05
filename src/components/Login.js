@@ -40,7 +40,7 @@ export default function Login() {
     },
     left: {
       flex: 1,
-      backgroundImage: "url('/images/pexels-markusspiske-1871024 1.png')",
+      backgroundImage: "url('/images/login-left.png')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh'
@@ -74,7 +74,7 @@ export default function Login() {
       <div style={styles.left} />
       <div style={styles.right}>
         <div style={{ width: '100%', maxWidth: '520px', marginBottom: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
-          <img src="/images/Gemini_Generated_Image_hnm4xmhnm4xmhnm4 1.png" alt="logo" style={{ width: 48, height: 48 }} />
+          <img src="/images/logo-small.png" alt="logo" style={{ width: 48, height: 48 }} />
           <div style={{ fontWeight: 700, fontSize: 20 }}>Pantry Finder</div>
         </div>
         <div style={styles.card}>
