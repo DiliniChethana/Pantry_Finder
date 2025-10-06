@@ -58,23 +58,24 @@ export default function Home() {
 
         <div style={styles.cardsRow}>
           <div style={styles.card}>
+            {/* Use the large hero photo cropped for the card - reuse existing public image */}
             <img src="/images/login-left.png" alt="Bread" style={styles.cardImg} />
             <div style={styles.cardTitle}>Bread</div>
-            <div style={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+            <div style={styles.cardText}>A simple artisan loaf recipe using pantry staples.</div>
             <button style={styles.cardBtn}>See Full Details</button>
           </div>
 
           <div style={{ ...styles.card, border: '2px solid #eee' }}>
             <img src="/images/login-left.png" alt="Roast Bread" style={styles.cardImg} />
             <div style={styles.cardTitle}>Roast Bread</div>
-            <div style={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+            <div style={styles.cardText}>Crispy crust and soft center — perfect for sandwiches.</div>
             <button style={styles.primaryBtn}>See Full Details</button>
           </div>
 
           <div style={styles.card}>
             <img src="/images/login-left.png" alt="Pizza" style={styles.cardImg} />
             <div style={styles.cardTitle}>Pizza</div>
-            <div style={styles.cardText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</div>
+            <div style={styles.cardText}>Quick homemade pizza using pantry ingredients.</div>
             <button style={styles.cardBtn}>See Full Details</button>
           </div>
         </div>

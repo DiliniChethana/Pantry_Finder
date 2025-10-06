@@ -6,6 +6,7 @@ import { AuthProvider, useAuth } from './AuthContext';
 // Import your components
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Home from './components/Home';
 import PantrySelector from './components/PantrySelector';
 import RecipeDisplay from './components/RecipeDisplay';
 import SavedRecipes from './components/SavedRecipes';
@@ -37,9 +38,8 @@ export default function App() {
   return (
     <Router>
       <AuthProvider>
-        {/* TEMP: render Login at root to verify UI during debugging */}
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
