@@ -34,11 +34,12 @@ export default function Home() {
           <img src="/images/logo-small.png" alt="logo" style={{ width: 44, height: 44 }} />
           <div style={{ fontWeight: 800, fontSize: 20 }}>Pantry Finder</div>
         </div>
-        <nav style={{ display: 'flex', gap: 28 }}>
-          <Link to="#">Home</Link>
-          <Link to="#">Saved Recipes</Link>
-          <Link to="#">Pantry</Link>
-          <Link to="#">Profile</Link>
+        <nav style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+          <Link to="/">Home</Link>
+          <Link to="/saved-recipes">Saved Recipes</Link>
+          <Link to="/pantry">Pantry</Link>
+          <Link to="/profile">Profile</Link>
+          <Link to="/login" style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid #ddd' }}>Login</Link>
         </nav>
       </header>
 
@@ -46,6 +47,10 @@ export default function Home() {
         <div style={styles.heroLeft}>
           <div style={styles.heroTitle}>The Easiest Way To<br/>Make Your<br/>Favorite Meal</div>
           <p style={styles.heroDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etp</p>
+
+          <div style={{ marginTop: 26 }}>
+            <Link to="/signup" style={{ background: '#F7931E', color: '#fff', padding: '12px 22px', borderRadius: 12, fontWeight: 800, textDecoration: 'none' }}>Get Started</Link>
+          </div>
         </div>
         <div style={styles.heroImageWrap}>
           <img src="/images/login-left.png" alt="hero" style={styles.heroImage} />
@@ -58,7 +63,6 @@ export default function Home() {
 
         <div style={styles.cardsRow}>
           <div style={styles.card}>
-            {/* Use the large hero photo cropped for the card - reuse existing public image */}
             <img src="/images/login-left.png" alt="Bread" style={styles.cardImg} />
             <div style={styles.cardTitle}>Bread</div>
             <div style={styles.cardText}>A simple artisan loaf recipe using pantry staples.</div>
