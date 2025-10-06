@@ -36,47 +36,59 @@ export default function Login() {
     container: {
       display: 'flex',
       minHeight: '100vh',
-      fontFamily: 'Segoe UI, Roboto, Helvetica, Arial, sans-serif'
+      fontFamily: 'Segoe UI, Roboto, Helvetica, Arial, sans-serif',
+      background: '#fff'
     },
     left: {
-      flex: 1,
+      flex: '0 0 50%',
+      position: 'relative',
       backgroundImage: "url('/images/login-left.png')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       minHeight: '100vh'
     },
+    leftOverlay: {
+      position: 'absolute',
+      inset: 0,
+      background: 'rgba(0,0,0,0.35)'
+    },
     right: {
-      flex: 1,
+      flex: '0 0 50%',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: '48px 64px'
+      justifyContent: 'center',
+      padding: '64px 80px'
     },
     card: {
       width: '100%',
       maxWidth: '520px',
       background: '#fff',
-      borderRadius: '4px',
+      borderRadius: '6px',
       padding: '28px 36px',
       boxShadow: 'none'
     },
     brandRow: { display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '6px', justifyContent: 'center' },
-    title: { color: '#F7931E', fontSize: '22px', margin: '18px 0 18px', fontWeight: 700 },
+    title: { color: '#F7931E', fontSize: '26px', margin: '14px 0 18px', fontWeight: 700 },
     label: { fontWeight: 700, marginBottom: '8px', display: 'block', fontSize: '16px' },
-    input: { width: '100%', padding: '14px 16px', border: '1px solid #cfcfcf', borderRadius: '4px', marginBottom: '18px', fontSize: '14px' },
-    button: { width: '80%', background: '#F7931E', color: '#fff', padding: '14px', borderRadius: '10px', border: 'none', fontWeight: 800, fontSize: '18px', cursor: 'pointer', margin: '18px auto' },
-    footerText: { textAlign: 'center', marginTop: '18px', color: '#333' },
-    smallLink: { color: '#3b82f6', textDecoration: 'none', marginLeft: '6px' }
+    input: { width: '100%', padding: '14px 18px', border: '1px solid #cfcfcf', borderRadius: '2px', marginBottom: '22px', fontSize: '15px' },
+    button: { width: '100%', background: '#F7931E', color: '#fff', padding: '14px', borderRadius: '10px', border: 'none', fontWeight: 800, fontSize: '20px', cursor: 'pointer', margin: '22px 0' },
+    footerText: { textAlign: 'center', marginTop: '10px', color: '#333', display: 'flex', justifyContent: 'center', gap: 6, alignItems: 'center' },
+    smallLink: { color: '#3b82f6', textDecoration: 'none' }
   };
 
   return (
     <div style={styles.container}>
-      <div style={styles.left} />
+      <div style={styles.left}>
+        <div style={styles.leftOverlay} />
+      </div>
+
       <div style={styles.right}>
-        <div style={{ width: '100%', maxWidth: '520px', marginBottom: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
-          <img src="/images/logo-small.png" alt="logo" style={{ width: 48, height: 48 }} />
-          <div style={{ fontWeight: 700, fontSize: 20 }}>Pantry Finder</div>
+        <div style={{ width: '100%', maxWidth: '520px', marginBottom: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
+          <img src="/images/logo-small.png" alt="logo" style={{ width: 56, height: 56 }} />
+          <div style={{ fontWeight: 800, fontSize: 22 }}>Pantry Finder</div>
         </div>
+
         <div style={styles.card}>
           <h3 style={{ ...styles.title, textAlign: 'left' }}>Login</h3>
 
@@ -105,7 +117,7 @@ export default function Login() {
           </form>
 
           <div style={styles.footerText}>
-            <span>Don't you have an account?</span>
+            <span style={{fontSize:14}}>Don't you have an&nbsp;account?</span>
             <Link to="/signup" style={styles.smallLink}>Sign Up</Link>
           </div>
 
