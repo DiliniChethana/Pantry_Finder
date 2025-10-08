@@ -93,7 +93,7 @@ function Signup() {
 
           {error && <div style={styles.error}>{error}</div>}
 
-          <div style={styles.footer}>Do you already have an account? <Link to="/login" style={styles.smallLink}>Login</Link></div>
+          <div style={styles.footer}>Do you already have an account? <Link to="/" style={styles.smallLink}>Login</Link></div>
         </div>
       </div>
     </div>
