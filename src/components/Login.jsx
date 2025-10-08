@@ -4,8 +4,8 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 
-// Use relative paths; frontend dev server proxy will forward to backend
-const API_BASE_URL = '';
+// Use Vite environment variable or empty string to let proxy work in dev
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 export default function Login() {
   const [identifier, setIdentifier] = useState('');
@@ -24,10 +24,18 @@ export default function Login() {
       });
 
       const { token, user_id } = response.data;
-      login({ id: user_id }, token);
-      navigate('/pantry');
+      if (token && user_id) {
+        login({ id: user_id }, token);
+        navigate('/pantry');
+        return;
+      }
+      // Unexpected success payload
+      setError('Login succeeded but no token returned.');
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Please check credentials.');
+      // Better error messages for debugging
+      const status = err.response?.status;
+      const serverMsg = err.response?.data?.message || JSON.stringify(err.response?.data || {});
+      setError(status ? `Login failed (${status}): ${serverMsg}` : 'Network error: could not reach server');
       console.error('Login error:', err);
     }
   };

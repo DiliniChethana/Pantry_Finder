@@ -4,8 +4,8 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 // import { useAuth } from '../AuthContext';
 
-// Use relative paths; frontend dev server proxy will forward to backend
-const API_BASE_URL = '';
+// Use Vite environment variable or empty string to let proxy work in dev
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -35,7 +35,8 @@ function Signup() {
         password: formData.password,
       });
 
-      navigate('/login');
+      // After successful signup, go to the login page (Login is at `/`)
+      navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || 'Signup failed.');
       console.error('Signup error:', err);
@@ -84,7 +85,7 @@ function Signup() {
             <label style={styles.label}>Password</label>
             <input name="password" type="password" style={styles.input} placeholder="Password" value={formData.password} onChange={handleChange} required />
 
-            <label style={styles.label}>Comform Password</label>
+            <label style={styles.label}>Confirm Password</label>
             <input name="confirmPassword" type="password" style={styles.input} placeholder="Comform Password" value={formData.confirmPassword} onChange={handleChange} required />
 
             <button type="submit" style={styles.button}>SignUp</button>
